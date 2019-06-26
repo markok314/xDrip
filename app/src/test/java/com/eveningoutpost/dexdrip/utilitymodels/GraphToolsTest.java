@@ -1,11 +1,11 @@
-package com.eveningoutpost.dexdrip.UtilityModels;
+package com.eveningoutpost.dexdrip.utilitymodels;
 
 import com.eveningoutpost.dexdrip.models.BgReading;
 import com.eveningoutpost.dexdrip.RobolectricTestWithConfig;
 
 import org.junit.Test;
 
-import static com.eveningoutpost.dexdrip.UtilityModels.GraphTools.interpolateCalculatedValue;
+import static com.eveningoutpost.dexdrip.utilitymodels.GraphTools.interpolateCalculatedValue;
 import static com.google.common.truth.Truth.assertWithMessage;
 
 

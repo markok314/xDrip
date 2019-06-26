@@ -1,5 +1,5 @@
 
-package com.eveningoutpost.dexdrip.UtilityModels.pebble.watchface;
+package com.eveningoutpost.dexdrip.utilitymodels.pebble.watchface;
 
 import android.Manifest;
 import android.app.Activity;

@@ -5,14 +5,13 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-import com.eveningoutpost.dexdrip.Models.JoH;
-import com.eveningoutpost.dexdrip.Models.UserError;
+import com.eveningoutpost.dexdrip.models.JoH;
+import com.eveningoutpost.dexdrip.models.UserError;
 import com.google.android.gms.common.GoogleApiAvailability;
 
 
@@ -56,7 +55,9 @@ public class LicenseAgreementActivity extends BaseAppCompatActivity {
     public void viewGoogleLicenses(View myview) {
         try {
             if (!appended) {
-                final String googleLicense = GoogleApiAvailability.getInstance().getOpenSourceSoftwareLicenseInfo(getApplicationContext());
+                // GoogleApiAvailability.getOpenSourceSoftwareLicenseInfo() was deprecated,
+                // then removed, and I found no replacement, so no Google licenses at the moment.
+                final String googleLicense = null; // GoogleApiAvailability.getInstance().getOpenSourceSoftwareLicenseInfo(getApplicationContext());
                 if (googleLicense != null) {
                     String whiteheader = "<font size=-2 color=white><pre>";
                     String whitefooter = "</font></pre>";

@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels;
+package com.eveningoutpost.dexdrip.utilitymodels;
 
 import lecho.lib.hellocharts.model.PointValue;
 import lombok.NoArgsConstructor;

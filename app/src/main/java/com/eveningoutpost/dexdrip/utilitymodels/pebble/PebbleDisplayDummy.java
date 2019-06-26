@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels.pebble;
+package com.eveningoutpost.dexdrip.utilitymodels.pebble;
 
 import com.getpebble.android.kit.util.PebbleDictionary;
 

@@ -1,8 +1,8 @@
-package com.eveningoutpost.dexdrip.UtilityModels.pebble;
+package com.eveningoutpost.dexdrip.utilitymodels.pebble;
 
 import android.content.Context;
 
-import com.eveningoutpost.dexdrip.UtilityModels.BgGraphBuilder;
+import com.eveningoutpost.dexdrip.utilitymodels.BgGraphBuilder;
 import com.getpebble.android.kit.util.PebbleDictionary;
 
 import java.util.UUID;

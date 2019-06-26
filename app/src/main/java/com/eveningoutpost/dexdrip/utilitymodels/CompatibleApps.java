@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels;
+package com.eveningoutpost.dexdrip.utilitymodels;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -21,7 +21,7 @@ import com.eveningoutpost.dexdrip.utils.DexCollectionType;
 import com.eveningoutpost.dexdrip.webservices.XdripWebService;
 import com.eveningoutpost.dexdrip.xdrip;
 
-import static com.eveningoutpost.dexdrip.UtilityModels.Constants.COMPATIBLE_BASE_ID;
+import static com.eveningoutpost.dexdrip.utilitymodels.Constants.COMPATIBLE_BASE_ID;
 
 /**
  * Created by jamorham on 01/11/2017.

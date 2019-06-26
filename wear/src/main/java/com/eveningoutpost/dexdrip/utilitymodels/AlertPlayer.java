@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels;
+package com.eveningoutpost.dexdrip.utilitymodels;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -30,7 +30,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 import static com.eveningoutpost.dexdrip.ListenerService.SendData;
-import static com.eveningoutpost.dexdrip.UtilityModels.AlertPlayer.getAlertPlayerStreamType;
+import static com.eveningoutpost.dexdrip.utilitymodels.AlertPlayer.getAlertPlayerStreamType;
 
 //KS import com.eveningoutpost.dexdrip.EditAlertActivity;
 //KS import com.eveningoutpost.dexdrip.GcmActivity;

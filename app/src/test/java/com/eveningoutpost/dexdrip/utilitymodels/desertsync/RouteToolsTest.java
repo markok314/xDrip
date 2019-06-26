@@ -1,9 +1,9 @@
-package com.eveningoutpost.dexdrip.UtilityModels.desertsync;
+package com.eveningoutpost.dexdrip.utilitymodels.desertsync;
 
 import org.junit.Test;
 
-import static com.eveningoutpost.dexdrip.UtilityModels.desertsync.RouteTools.inSameNetwork;
-import static com.eveningoutpost.dexdrip.UtilityModels.desertsync.RouteTools.ip;
+import static com.eveningoutpost.dexdrip.utilitymodels.desertsync.RouteTools.inSameNetwork;
+import static com.eveningoutpost.dexdrip.utilitymodels.desertsync.RouteTools.ip;
 import static com.google.common.truth.Truth.assertWithMessage;
 
 // jamorham

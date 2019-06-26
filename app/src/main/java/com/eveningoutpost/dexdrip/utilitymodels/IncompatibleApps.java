@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels;
+package com.eveningoutpost.dexdrip.utilitymodels;
 
 import android.content.Context;
 
@@ -9,7 +9,7 @@ import com.eveningoutpost.dexdrip.xdrip;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.eveningoutpost.dexdrip.UtilityModels.Constants.INCOMPATIBLE_BASE_ID;
+import static com.eveningoutpost.dexdrip.utilitymodels.Constants.INCOMPATIBLE_BASE_ID;
 
 /**
  * Created by jamorham on 01/11/2017.

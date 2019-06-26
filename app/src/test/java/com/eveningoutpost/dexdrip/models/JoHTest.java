@@ -1,10 +1,9 @@
-package com.eveningoutpost.dexdrip.Models;
+package com.eveningoutpost.dexdrip.models;
 
 import org.junit.Test;
 
-import static com.eveningoutpost.dexdrip.Models.JoH.validateMacAddress;
+import static com.eveningoutpost.dexdrip.models.JoH.validateMacAddress;
 import static com.google.common.truth.Truth.assertWithMessage;
-import static org.junit.Assert.*;
 
 // jamorham
 

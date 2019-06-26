@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels.desertsync;
+package com.eveningoutpost.dexdrip.utilitymodels.desertsync;
 
 import android.os.PowerManager;
 
@@ -6,10 +6,10 @@ import com.eveningoutpost.dexdrip.Home;
 import com.eveningoutpost.dexdrip.models.DesertSync;
 import com.eveningoutpost.dexdrip.models.JoH;
 import com.eveningoutpost.dexdrip.models.UserError;
-import com.eveningoutpost.dexdrip.UtilityModels.Constants;
-import com.eveningoutpost.dexdrip.UtilityModels.PersistentStore;
-import com.eveningoutpost.dexdrip.UtilityModels.Pref;
-import com.eveningoutpost.dexdrip.UtilityModels.StatusItem;
+import com.eveningoutpost.dexdrip.utilitymodels.Constants;
+import com.eveningoutpost.dexdrip.utilitymodels.PersistentStore;
+import com.eveningoutpost.dexdrip.utilitymodels.Pref;
+import com.eveningoutpost.dexdrip.utilitymodels.StatusItem;
 import com.eveningoutpost.dexdrip.webservices.XdripWebService;
 import com.google.gson.annotations.Expose;
 
@@ -34,11 +34,11 @@ import static com.eveningoutpost.dexdrip.models.JoH.pratelimit;
 import static com.eveningoutpost.dexdrip.models.JoH.releaseWakeLock;
 import static com.eveningoutpost.dexdrip.models.JoH.showNotification;
 import static com.eveningoutpost.dexdrip.models.JoH.tsl;
-import static com.eveningoutpost.dexdrip.UtilityModels.Constants.DESERT_MASTER_UNREACHABLE;
-import static com.eveningoutpost.dexdrip.UtilityModels.desertsync.DesertComms.QueueHandler.MasterPing;
-import static com.eveningoutpost.dexdrip.UtilityModels.desertsync.DesertComms.QueueHandler.None;
-import static com.eveningoutpost.dexdrip.UtilityModels.desertsync.DesertComms.QueueHandler.Pull;
-import static com.eveningoutpost.dexdrip.UtilityModels.desertsync.DesertComms.QueueHandler.ToFollower;
+import static com.eveningoutpost.dexdrip.utilitymodels.Constants.DESERT_MASTER_UNREACHABLE;
+import static com.eveningoutpost.dexdrip.utilitymodels.desertsync.DesertComms.QueueHandler.MasterPing;
+import static com.eveningoutpost.dexdrip.utilitymodels.desertsync.DesertComms.QueueHandler.None;
+import static com.eveningoutpost.dexdrip.utilitymodels.desertsync.DesertComms.QueueHandler.Pull;
+import static com.eveningoutpost.dexdrip.utilitymodels.desertsync.DesertComms.QueueHandler.ToFollower;
 
 
 /**

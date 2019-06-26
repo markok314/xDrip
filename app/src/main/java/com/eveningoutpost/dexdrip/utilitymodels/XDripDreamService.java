@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels;
+package com.eveningoutpost.dexdrip.utilitymodels;
 
 import android.animation.TimeAnimator;
 import android.content.Context;
@@ -29,7 +29,7 @@ import com.eveningoutpost.dexdrip.R;
 import com.eveningoutpost.dexdrip.utils.DexCollectionType;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static com.eveningoutpost.dexdrip.UtilityModels.ColorCache.getCol;
+import static com.eveningoutpost.dexdrip.utilitymodels.ColorCache.getCol;
 
 /**
  * Created by jamorham on 31/10/2016.

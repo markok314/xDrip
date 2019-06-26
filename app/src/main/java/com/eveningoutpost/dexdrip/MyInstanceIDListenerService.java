@@ -5,6 +5,8 @@ package com.eveningoutpost.dexdrip;
  */
 
 import android.content.Intent;
+/* commented out, because FirebaseInstanceIdService was deprecated and obviously removed
+
 
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
@@ -15,7 +17,7 @@ public class MyInstanceIDListenerService extends FirebaseInstanceIdService {
      * Called if InstanceID token is updated. This may occur if the security of
      * the previous token had been compromised. This call is initiated by the
      * InstanceID provider.
-     */
+     /
     @Override
     public void onTokenRefresh() {
         // Fetch updated Instance ID token and notify our app's server of any changes (if applicable).
@@ -24,3 +26,5 @@ public class MyInstanceIDListenerService extends FirebaseInstanceIdService {
         super.onTokenRefresh();
     }
 }
+
+*/

@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels;
+package com.eveningoutpost.dexdrip.utilitymodels;
 
 /**
  * jamorham
@@ -13,8 +13,8 @@ import android.os.Bundle;
 
 import com.eveningoutpost.dexdrip.Services.ActivityRecognizedService;
 
-import static com.eveningoutpost.dexdrip.UtilityModels.Intents.ACTION_VEHICLE_MODE;
-import static com.eveningoutpost.dexdrip.UtilityModels.Intents.EXTRA_VEHICLE_MODE_ENABLED;
+import static com.eveningoutpost.dexdrip.utilitymodels.Intents.ACTION_VEHICLE_MODE;
+import static com.eveningoutpost.dexdrip.utilitymodels.Intents.EXTRA_VEHICLE_MODE_ENABLED;
 
 public class VehicleMode {
 

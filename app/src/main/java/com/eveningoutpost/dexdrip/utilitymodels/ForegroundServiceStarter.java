@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels;
+package com.eveningoutpost.dexdrip.utilitymodels;
 
 import android.app.Service;
 import android.content.Context;
@@ -9,7 +9,7 @@ import com.eveningoutpost.dexdrip.models.JoH;
 import com.eveningoutpost.dexdrip.models.UserError;
 import com.eveningoutpost.dexdrip.models.UserError.Log;
 
-import static com.eveningoutpost.dexdrip.UtilityModels.Notifications.ongoingNotificationId;
+import static com.eveningoutpost.dexdrip.utilitymodels.Notifications.ongoingNotificationId;
 
 /**
  * Created by Emma Black on 12/25/14.

@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.Models;
+package com.eveningoutpost.dexdrip.models;
 
 import com.eveningoutpost.dexdrip.RobolectricTestWithConfig;
 import com.google.common.truth.Truth;

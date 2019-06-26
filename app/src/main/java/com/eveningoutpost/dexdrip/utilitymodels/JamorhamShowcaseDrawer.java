@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels;
+package com.eveningoutpost.dexdrip.utilitymodels;
 
 /**
  * Created by jamorham on 20/06/2016.
@@ -7,8 +7,6 @@ package com.eveningoutpost.dexdrip.UtilityModels;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.util.DisplayMetrics;
-import android.util.Log;
 
 import com.eveningoutpost.dexdrip.R;
 

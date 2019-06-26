@@ -1,4 +1,4 @@
-package com.eveningoutpost.dexdrip.UtilityModels.desertsync;
+package com.eveningoutpost.dexdrip.utilitymodels.desertsync;
 
 import com.eveningoutpost.dexdrip.models.UserError;
 import com.eveningoutpost.dexdrip.utils.CipherUtils;

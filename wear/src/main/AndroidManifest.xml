@@ -9,12 +9,12 @@
     <uses-permission android:name="com.google.android.permission.PROVIDE_BACKGROUND" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
-    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
-    <uses-permission android:name="android.permission.DELETE_PACKAGES" />
-    <uses-permission android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />
-    <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS" />
+    <!--<uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />-->
+    <!--<uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />-->
+    <!--<uses-permission android:name="android.permission.INSTALL_PACKAGES" />-->
+    <!--<uses-permission android:name="android.permission.DELETE_PACKAGES" />-->
+    <!--<uses-permission android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />-->
+    <!--<uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS" />-->
     <uses-permission
         android:name="android.permission.DEVICE_POWER"
         tools:ignore="ProtectedPermissions" />
@@ -24,8 +24,8 @@
         android:name="android.hardware.bluetooth_le"
         android:required="false" />
 
-    <uses-permission-sdk-23 android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -46,7 +46,12 @@
         <!-- If you want your app to run on pre-22, then set required to false -->
         <uses-library
             android:name="com.google.android.wearable"
-            android:required="false" />
+            android:required="true" />
+
+        <meta-data
+            tools:replace="android:value"
+            android:name="android.support.VERSION"
+            android:value="26.1.0"/>
 
         <meta-data
             android:name="AA_DB_NAME"
@@ -183,7 +188,7 @@
             android:enabled="true"
             android:exported="true" />
         <service
-            android:name=".UtilityModels.Notifications"
+            android:name=".utilitymodels.Notifications"
             android:exported="false" />
         <service
             android:name=".Services.SnoozeOnNotificationDismissService"
@@ -289,8 +294,8 @@
         <activity
             android:name=".LocationPermissionActivity"
             android:label="title_activity_location_permission"
-            android:launchMode="singleTop">
-            android:theme="android:theme="@style/Theme.AppCompat.Light"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.Light">
         </activity>
         <activity
             android:name=".SnoozeActivity"

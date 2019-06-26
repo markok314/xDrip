@@ -31,13 +31,13 @@ import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.speech.RecognizerIntent;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.widget.Toolbar;
 import android.text.InputType;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -137,6 +137,7 @@ import com.eveningoutpost.dexdrip.wearintegration.WatchUpdaterService;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 
 import java.io.ByteArrayOutputStream;
@@ -3548,10 +3549,10 @@ public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPe
 
     public static void snackBar(int buttonString, String message, View.OnClickListener mOnClickListener, Activity activity) {
 
-        android.support.design.widget.Snackbar.make(
+        Snackbar.make(
 
                 activity.findViewById(android.R.id.content),
-                message, android.support.design.widget.Snackbar.LENGTH_LONG)
+                message, Snackbar.LENGTH_LONG)
                 .setAction(buttonString, mOnClickListener)
                 //.setActionTextColor(Color.RED)
                 .show();

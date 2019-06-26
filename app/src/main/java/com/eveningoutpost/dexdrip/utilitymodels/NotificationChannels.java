@@ -7,7 +7,7 @@ import android.app.NotificationChannelGroup;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.media.AudioAttributes;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 
 import com.eveningoutpost.dexdrip.R;
 import com.eveningoutpost.dexdrip.xdrip;
@@ -176,10 +176,11 @@ public class NotificationChannels {
 
         // mirror the notification parameters in the channel
         template.setGroup(temp.getChannelId());
-        template.setVibrationPattern(wip.mNotification.vibrate);
-        template.setSound(wip.mNotification.sound, generic_audio);
-        template.setLightColor(wip.mNotification.ledARGB);
-        if ((wip.mNotification.ledOnMS != 0) && (wip.mNotification.ledOffMS != 0))
+        Notification wipNotification = wip.getNotification();
+        template.setVibrationPattern(wipNotification.vibrate);
+        template.setSound(wipNotification.sound, generic_audio);
+        template.setLightColor(wipNotification.ledARGB);
+        if ((wipNotification.ledOnMS != 0) && (wipNotification.ledOffMS != 0))
             template.enableLights(true); // weird how this doesn't work like vibration pattern
         template.setDescription(temp.getChannelId() + " " + wip.hashCode());
 
@@ -201,8 +202,8 @@ public class NotificationChannels {
         }
         channel.setDescription(template.getDescription());
         channel.setVibrationPattern(template.getVibrationPattern());
-        template.setLightColor(wip.mNotification.ledARGB);
-        if ((wip.mNotification.ledOnMS != 0) && (wip.mNotification.ledOffMS != 0))
+        template.setLightColor(wipNotification.ledARGB);
+        if ((wipNotification.ledOnMS != 0) && (wipNotification.ledOffMS != 0))
             template.enableLights(true); // weird how this doesn't work like vibration pattern
         template.setDescription(temp.getChannelId() + " " + wip.hashCode());
 

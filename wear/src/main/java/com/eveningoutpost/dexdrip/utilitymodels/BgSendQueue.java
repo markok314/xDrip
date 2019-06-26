@@ -8,7 +8,7 @@ import android.os.BatteryManager;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.provider.BaseColumns;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.support.v4.content.LocalBroadcastManager;
 
 import com.activeandroid.Model;

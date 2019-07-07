@@ -19,7 +19,8 @@ import android.os.PowerManager;
 import android.preference.PreferenceManager;
 //import android.support.v4.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import android.support.wearable.view.WatchViewStub;
 import android.support.wearable.watchface.WatchFaceStyle;
 import android.util.Log;

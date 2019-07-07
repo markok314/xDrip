@@ -18,8 +18,7 @@ import org.robolectric.shadows.ShadowLog;
  * @author Asbjørn Aarrestad, asbjorn@aarrestad.com - 2018.03
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class,
-        packageName = "com.eveningoutpost.dexdrip",
+@Config(packageName = "com.eveningoutpost.dexdrip",
         application = TestingApplication.class
 )
 public abstract class RobolectricTestWithConfig {

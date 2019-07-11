@@ -34,7 +34,7 @@ import java.util.List;
 
 //KS import com.eveningoutpost.dexdrip.GcmActivity;
 //KS import com.eveningoutpost.dexdrip.Home;
-//KS import com.eveningoutpost.dexdrip.Models.Calibration;
+//KS import com.eveningoutpost.dexdrip.models.Calibration;
 //KS following are not used on watch
 /*
 import com.eveningoutpost.dexdrip.Services.SyncService;

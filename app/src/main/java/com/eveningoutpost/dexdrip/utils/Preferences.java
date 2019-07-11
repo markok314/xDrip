@@ -66,6 +66,7 @@ import com.eveningoutpost.dexdrip.utilitymodels.Pref;
 import com.eveningoutpost.dexdrip.utilitymodels.ShotStateStore;
 import com.eveningoutpost.dexdrip.utilitymodels.SpeechUtil;
 import com.eveningoutpost.dexdrip.utilitymodels.UpdateActivity;
+import com.eveningoutpost.dexdrip.utilitymodels.WholeHouse;
 import com.eveningoutpost.dexdrip.utilitymodels.pebble.PebbleUtil;
 import com.eveningoutpost.dexdrip.utilitymodels.pebble.PebbleWatchSync;
 import com.eveningoutpost.dexdrip.utilitymodels.pebble.watchface.InstallPebbleClassicTrendWatchface;
@@ -76,6 +77,7 @@ import com.eveningoutpost.dexdrip.utilitymodels.pebble.watchface.InstallPebbleWa
 import com.eveningoutpost.dexdrip.WidgetUpdateService;
 import com.eveningoutpost.dexdrip.calibrations.PluggableCalibration;
 import com.eveningoutpost.dexdrip.cgm.nsfollow.NightscoutFollow;
+import com.eveningoutpost.dexdrip.cgm.sharefollow.ShareFollowService;
 import com.eveningoutpost.dexdrip.insulin.inpen.InPenEntry;
 import com.eveningoutpost.dexdrip.profileeditor.ProfileEditor;
 import com.eveningoutpost.dexdrip.tidepool.TidepoolUploader;
@@ -99,6 +101,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import lombok.Setter;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
@@ -131,6 +135,7 @@ public class Preferences extends BasePreferenceActivity implements SearchPrefere
 
     private void refreshFragments() {
         this.preferenceFragment = new AllPrefsFragment();
+        this.preferenceFragment.setParent(this);
         pFragment = this.preferenceFragment;
         getFragmentManager().beginTransaction().replace(android.R.id.content,
                 this.preferenceFragment).commit();
@@ -391,7 +396,7 @@ public class Preferences extends BasePreferenceActivity implements SearchPrefere
     {
         super.onResume();
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(ActivityRecognizedService.prefListener);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && DexCollectionType.hasBluetooth()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && DexCollectionType.hasBluetooth() && !WholeHouse.isRpi()) {
             LocationHelper.requestLocationForBluetooth(this); // double check!
         }
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(LeFunEntry.prefListener);
@@ -719,12 +724,16 @@ public class Preferences extends BasePreferenceActivity implements SearchPrefere
     }
 
 
+
     public static class AllPrefsFragment extends PreferenceFragment {
 
+        @Setter
+        Preferences parent;
         SharedPreferences prefs;
         SearchConfiguration searchConfiguration;
 
         public LockScreenWallPaper.PrefListener lockListener = new LockScreenWallPaper.PrefListener();
+
 
         private void setSummary(String pref_name) {
      /*       try {
@@ -759,6 +768,8 @@ public class Preferences extends BasePreferenceActivity implements SearchPrefere
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             this.prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            final DexCollectionType collectionType = DexCollectionType.getType(this.prefs.getString("dex_collection_method", "BluetoothWixel"));
+
             static_units = this.prefs.getString("units", "mgdl");
             addPreferencesFromResource(R.xml.pref_license);
             addPreferencesFromResource(R.xml.pref_general);
@@ -934,7 +945,7 @@ public class Preferences extends BasePreferenceActivity implements SearchPrefere
             //DexCollectionType collectionType = DexCollectionType.getType(findPreference("dex_collection_method").)
 
             final ListPreference currentCalibrationPlugin = (ListPreference)findPreference("current_calibration_plugin");
-
+            final PreferenceCategory collectionCategory = (PreferenceCategory) findPreference("collection_category");
 
             final Preference shareKey = findPreference("share_key");
             shareKey.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -980,6 +991,37 @@ public class Preferences extends BasePreferenceActivity implements SearchPrefere
             } catch (Exception e) {
                 //
             }
+
+
+            final Preference shFollowUser = findPreference("shfollow_user");
+            final Preference shFollowPass = findPreference("shfollow_pass");
+
+            if (collectionType == DexCollectionType.SHFollow) {
+                final Preference.OnPreferenceChangeListener shFollowListener = new Preference.OnPreferenceChangeListener() {
+                    @Override
+                    public boolean onPreferenceChange(Preference preference, Object newValue) {
+                        ShareFollowService.resetInstanceAndInvalidateSession();
+                        CollectionServiceStarter.restartCollectionServiceBackground();
+                        return true;
+                    }
+                };
+
+                try {
+                    shFollowUser.setOnPreferenceChangeListener(shFollowListener);
+                    shFollowPass.setOnPreferenceChangeListener(shFollowListener);
+                } catch (Exception e) {
+                    //
+                }
+
+            } else {
+                try {
+                    collectionCategory.removePreference(shFollowUser);
+                    collectionCategory.removePreference(shFollowPass);
+                } catch (Exception e) {
+                    //
+                }
+            }
+
 
             final Preference inpen_enabled = findPreference("inpen_enabled");
             try {
@@ -1030,7 +1072,7 @@ public class Preferences extends BasePreferenceActivity implements SearchPrefere
 
             final Preference useCustomSyncKey = findPreference("use_custom_sync_key");
             final Preference CustomSyncKey = findPreference("custom_sync_key");
-            final PreferenceCategory collectionCategory = (PreferenceCategory) findPreference("collection_category");
+
             final PreferenceCategory flairCategory = (PreferenceCategory) findPreference("xdrip_plus_display_colorset9_android5plus");
             //final PreferenceScreen updateScreen = (PreferenceScreen) findPreference("xdrip_plus_update_settings");
             final PreferenceScreen loggingScreen = (PreferenceScreen) findPreference("xdrip_logging_adv_settings");
@@ -1260,7 +1302,6 @@ public class Preferences extends BasePreferenceActivity implements SearchPrefere
             });
 
 
-            DexCollectionType collectionType = DexCollectionType.getType(this.prefs.getString("dex_collection_method", "BluetoothWixel"));
 
             Log.d(TAG, collectionType.name());
             if (collectionType != DexCollectionType.DexcomShare) {
@@ -1952,6 +1993,23 @@ public class Preferences extends BasePreferenceActivity implements SearchPrefere
                     //    CollectionServiceStarter.restartCollectionService(preference.getContext());
                     }
                     CollectionServiceStarter.restartCollectionServiceBackground();
+
+                    // This generically refreshes the fragment which may well nullify some of the ui logic above as it does a complete rebuild
+                    Inevitable.task("refresh-prefs", 100, new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                JoH.runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        if (parent != null) parent.refreshFragments();
+                                    }
+                                });
+                            } catch (Exception e) {
+                                Log.e(TAG, "Got exception refreshing fragments: " + e);
+                            }
+                        }
+                    });
                     return true;
                 }
             });

@@ -131,7 +131,7 @@
     <string name="undo_button">Botão para Desfazer</string>
     <string name="showcase_undo">O botão Desfazer pode cancelar acções do Simulador de Tratamento, Calibrações e Notas\n\nApós 30 minutos vai esconder-se novamente</string>
     <string name="add_note">Adicionar Nota</string>
-    <string name="blood_test">Teste com gota de sangue</string>
+    <string name="blood_test">Teste Capilar</string>
     <string name="share">Partilhar</string>
     <string name="title_activity_profile_editor">Editor de Perfil de Tratamento</string>
     <string name="first_use_menu_to_scan">Utilize o menu para pesquisar o seu dispositivo Bluetooth ou altere a Fonte de Dados nas Definições!</string>
@@ -219,7 +219,7 @@
     <string name="other_xdrip_plus_alerts">Outros Alertas xDrip+</string>
     <string name="xdrip_plus_display_settings">Definições de Visualização xDrip+</string>
     <string name="display_customisations">Personalizações de visualização</string>
-    <string name="insulin_carb_ratios_etc_for_models">Insulina, rácios de Hidratos etc para modelos</string>
+    <string name="insulin_carb_ratios_etc_for_models">Insulina, Rácios de Hidratos etc para modelos</string>
     <string name="grams_of_carbohydrate_one_unit_covers">Gramas de Hidratos que cobre 1 Uni.</string>
     <string name="linear_model_carbs_absorbed_per_hour">Modelo linear de absorção de Hidratos por hora</string>
     <string name="carb_absorption_rate">Taxa de Absorção de Hidratos</string>
@@ -473,8 +473,8 @@
     <string name="twenty_four_hour_average_line">Linha média de 24 Horas</string>
     <string name="glucose_target_line">Linha Alvo da Glicemia</string>
     <string name="annotations_and_dots">Anotações e Pontos</string>
-    <string name="blood_test_background">Teste de Sangue: cor de fundo</string>
-    <string name="blood_test_foreground">Teste de Sangue: cor</string>
+    <string name="blood_test_background">Teste Capilar: Cor de Fundo</string>
+    <string name="blood_test_foreground">Teste Capilar: Cor</string>
     <string name="treatment_background">Tratamento: Cor de Fundo</string>
     <string name="treatment_foreground">Tratamento: Cor</string>
     <string name="backgrounds">Fundos</string>
@@ -610,6 +610,8 @@
     <string name="use_external_blukon_algorithm">Algoritmo Externo para o Libre.</string>
     <string name="calibrate_external_libre_algorithm_summary">Aplica métodos de calibração xDrip em dados OOP.</string>
     <string name="calibrate_external_libre_algorithm_title">Algoritmo de Calibração OOP.</string>
+    <string name="libre_use_smoothed_data_summary">Usa a média de 5 pontos para obter dados do Libre mais suaves.</string>
+    <string name="libre_use_smoothed_data_title">Dados do Libre suave.</string>
     <string name="retrieve_blukon_history_title">Recuperar histórico do Libre</string>
     <string name="retrieve_blukon_history_summary">Recuperar as leituras perdidas do Blucon ao ligar-se novamente ao sensor.</string>
     <string name="interpret_share_raw">Se estiver a usar Partilha, o xDrip irá mostrar os valores que normalmente estão escondidos no receptor.</string>
@@ -777,7 +779,7 @@
     <string name="step_counter_1st_color">Contador Passos 1ª Cor</string>
     <string name="step_counter_2nd_color">Contador Passos 2ª Cor</string>
     <string name="flair_colors">Cores Elegantes</string>
-    <string name="use_flair_colors">Utilizar Cores Elegantes</string>
+    <string name="use_flair_colors">Usar Cores Elegantes</string>
     <string name="upper_title_bar_flair">Barra de Título Superior Elegante</string>
     <string name="lower_button_bar_falir">Barra de Botões Inferior Elegante</string>
     <string name="force_english_text">Forçar Texto em Inglês</string>
@@ -978,7 +980,7 @@
     <string name="sensor_is_still_warming_up_please_wait">Sensor ainda está em preparação, por favor espere</string>
     <string name="number_wall_config">Configuração Number Wall</string>
     <string name="summary_If_you_plan_to_only_use_a_Wear_collector_and_never_your_phone">Se planeia usar Wear como receptor e nunca o telemóvel.</string>
-    <string name="title_Only_use_Wear">Uitlizar apenas Wear</string>
+    <string name="title_Only_use_Wear">Usar apenas Wear</string>
     <string name="summary_Also_show_the_filtered_data_on_the_trend">Mostrar também os dados filtrados na tendência</string>
     <string name="summary_Show_Bolus_Wizard_Preview_Insulin_value_on_watch_when_appropriate">Mostrar valor Insulina na Pré-Visualização Assistente de Bólus quando apropriado no relógio</string>
     <string name="title_Display_BWP_Insulin">Mostrar Insulina Pré-VAB</string>
@@ -1005,7 +1007,7 @@
     <string name="title_Pump_Status">Estado da Bomba</string>
     <string name="summary_Show_treatment_carb_insulin_ratio">Mostrar Rácio Hidratos/Insulina</string>
     <string name="title_Carb_Insulin_Ratio">Rácio Hidratos/Insulina</string>
-    <string name="summary_Ask_for_a_second_optional_initial_calibration_blood_test">Perguntar por segunda leitura na calibração inicial do teste da glicose</string>
+    <string name="summary_Ask_for_a_second_optional_initial_calibration_blood_test">Perguntar por segunda leitura na calibração inicial do teste capilar</string>
     <string name="title_Double_Calibrations">Calibrações Duplas</string>
     <string name="summary_Enable_to_allow_variable_slopes_with_Libre_collection_methods">Activar para permitir inclinações variáveis com os métodos de recolha do Libre</string>
     <string name="title_Non_fixed_Libre_slopes">Inclinações não-fixas do Libre</string>
@@ -1221,7 +1223,7 @@
     <string name="title_ob1_g5_restart_sensor">Reiniciar Sensor</string>
     <string name="summary_ob1_g5_preemptive_restart">Por precaução recomeçar o sensor antes do fim da sessão ao 6º dia de 9, para evitar o tempo de adaptação</string>
     <string name="title_ob1_g5_preemptive_restart">Reinícios Preventivos</string>
-    <string name="summary_ob1_g5_use_insufficiently_calibrated">Continuar a utilizar os dados mesmo que não existam boas calibrações suficientes (Experimental!)</string>
+    <string name="summary_ob1_g5_use_insufficiently_calibrated">Continuar a usar os dados mesmo que não existam boas calibrações suficientes (Experimental!)</string>
     <string name="title_ob1_g5_use_insufficiently_calibrated">Continuar sem calibrações</string>
     <string name="summary_ob1_g5_fallback_to_xdrip">Reverter para o algoritmo xDrip se o G5 não fornecer dados de glicose (potencialmente arriscado!)</string>
     <string name="title_ob1_g5_fallback_to_xdrip">Retorno para xDrip</string>
@@ -1391,17 +1393,17 @@
     <string name="do_you_want_to_delete_and_reset_the_calibrations_for_this_sensor">Eliminar e Reiniciar as Calibrações para este Sensor?</string>
     <string name="you_have_an_old_experimental_glucose_prediction_setting_enabled__this_is_not_recommended_and_could_mess_things_up_badly__shall_i_disable_this_for_you">Possui uma antiga previsão experimental de glicose ativada.\n\nIsso NÃO é RECOMENDADO e pode confundir muito as coisas.\n\nPretende desativar?</string>
     <string name="settings_issue">Problema de Configurações!</string>
-    <string name="do_you_want_to_use_this_synced_fingerstick_blood_glucose_result_to_calibrate_with__you_can_change_when_this_dialog_is_displayed_in_settings">Pretende usar este teste glicemia capilar inserido para calibrar?\n\n(Pode alterar quando esta caixa de diálogo é exibida nas Configurações)</string>
+    <string name="do_you_want_to_use_this_synced_fingerstick_blood_glucose_result_to_calibrate_with__you_can_change_when_this_dialog_is_displayed_in_settings">Pretende usar este teste capilar inserido para calibrar?\n\n(Pode alterar quando esta caixa de diálogo é exibida nas Configurações)</string>
     <string name="use_bg_for_calibration">Usar Glicemia para Calibração?</string>
-    <string name="do_you_want_to_use_this_entered_fingerstick_blood_glucose_test_to_calibrate_with__you_can_change_when_this_dialog_is_displayed_in_settings">Pretende usar este teste glicemia capilar inserido para calibrar?\n\n(Pode alterar quando esta caixa de diálogo é exibida nas Configurações)</string>
+    <string name="do_you_want_to_use_this_entered_fingerstick_blood_glucose_test_to_calibrate_with__you_can_change_when_this_dialog_is_displayed_in_settings">Pretende usar este teste capilar inserido para calibrar?\n\n(Pode alterar quando esta caixa de diálogo é exibida nas Configurações)</string>
     <string name="yes_calibrate">SIM, Calibrar</string>
     <string name="enable_automatic_calibration">Activar Calibração Automática</string>
-    <string name="entered_blood_tests_which_occur_during_flat_trend_periods_can_automatically_be_used_to_recalibrate_after_20_minutes_this_should_provide_the_most_accurate_method_to_calibrate_with__do_you_want_to_enable_this_feature">Testes de sangue inseridos que ocorram durante períodos de tendência plana podem ser usados automaticamente para recalibrar após 20 minutos. Isto deve fornecer o método mais preciso para calibrar.\n\nDeseja ativar esta função?</string>
+    <string name="entered_blood_tests_which_occur_during_flat_trend_periods_can_automatically_be_used_to_recalibrate_after_20_minutes_this_should_provide_the_most_accurate_method_to_calibrate_with__do_you_want_to_enable_this_feature">Testes capilar inseridos que ocorram durante períodos de tendência plana podem ser usados automaticamente para recalibrar após 20 minutos. Isto deve fornecer o método mais preciso para calibrar.\n\nDeseja ativar esta função?</string>
     <string name="yes_enable">SIM, activar</string>
-    <string name="blood_test_action">Acção de Teste de Sangue</string>
+    <string name="blood_test_action">Acção de Teste Capilar</string>
     <string name="what_would_you_like_to_do">O que gostaria de fazer?</string>
     <string name="nothing">Nenhum</string>
-    <string name="are_you_sure_you_want_to_delete_this_blood_test_result">Tem Certeza que Deseja Apagar este Teste de Sangue?</string>
+    <string name="are_you_sure_you_want_to_delete_this_blood_test_result">Tem Certeza que Deseja Apagar este Teste Capilar?</string>
     <string name="yes_delete">Sim, Eliminar</string>
     <string name="deleted">Eliminado!</string>
     <string name="wifi_sleep_policy_issue">Problema com a Política de Suspensão WiFi</string>
@@ -1414,7 +1416,7 @@
     <string name="do_you_want_to_restore_the_backup_file_">Restaurar o ficheiro de cópia de segurança: </string>
     <string name="restore">Restaurar</string>
     <string name="calibrate_sensor">Calibrar Sensor?</string>
-    <string name="we_have_some_readings__next_we_need_the_first_calibration_blood_test__ready_to_calibrate_now">Existem algumas leituras!\n\nÉ preciso teste de sangue no dedo para calibrar.\n\nPronto para calibrar agora?</string>
+    <string name="we_have_some_readings__next_we_need_the_first_calibration_blood_test__ready_to_calibrate_now">Existem algumas leituras!\n\nÉ preciso teste capilar para calibrar.\n\nPronto para calibrar agora?</string>
     <string name="calibrate">Calibrar</string>
     <string name="confirm_delete">Confirmar Eliminação</string>
     <string name="are_you_sure_you_want_to_delete_this_treatment">Tem Certeza que Deseja Apagar Este Tratamento?</string>
@@ -1468,4 +1470,7 @@
     <string name="no_sensor_found">Sensor Não Encontrado</string>
     <string name="checksum_failed__retrying">Falha na Verificação - a tentar novamente</string>
     <string name="scanning">A Procurar</string>
+    <string name="authentication_failed_wrong_password">Autenticação falhou. Palavra-passe inválida?</string>
+    <string name="share_login_data_isnt_valid">Dados Login Partilhado não são válidos - verifique utilizador / palavra-passe</string>
+    <string name="connectivity_problem_reaching_share_servers">Problema de ligação ao alcançar servidores de Partilha</string>
 </resources>

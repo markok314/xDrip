@@ -51,6 +51,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+
 import static com.eveningoutpost.dexdrip.xdrip.gs;
 
 /**
@@ -362,7 +363,7 @@ public class GcmActivity extends FauxActivity {
             last_ping_request = JoH.tsl();
             Log.d(TAG, "Sending ping");
             if (JoH.pratelimit("gcm-ping", 1199))
-                GcmActivity.sendMessage("ping", new RollCall().toS());
+                GcmActivity.sendMessage("ping", new RollCall().populate().toS());
         } else {
             Log.d(TAG, "Already requested ping recently");
         }
@@ -370,7 +371,7 @@ public class GcmActivity extends FauxActivity {
 
     public static void desertPing() {
         if (JoH.pratelimit("gcm-desert-ping", 300)) {
-            GcmActivity.sendMessage("ping", new RollCall().toS());
+            GcmActivity.sendMessage("ping", new RollCall().populate().toS());
         } else {
             Log.d(TAG, "Already requested desert ping recently");
         }
@@ -380,7 +381,7 @@ public class GcmActivity extends FauxActivity {
         if (JoH.tsl() - last_rlcl_request > (60 * 1000)) {
             last_rlcl_request = JoH.tsl();
             if (JoH.pratelimit("gcm-rlcl", 3600))
-                GcmActivity.sendMessage("rlcl", new RollCall().toS());
+                GcmActivity.sendMessage("rlcl", new RollCall().populate().toS());
         }
     }
 
@@ -525,7 +526,10 @@ public class GcmActivity extends FauxActivity {
         if (token != null) {
             if ((JoH.tsl() - last_sync_request) > (60 * 1000 * (5 + bg_sync_backoff))) {
                 last_sync_request = JoH.tsl();
-                if (JoH.pratelimit("gcm-bfr", 299)) GcmActivity.sendMessage("bfr", "");
+                final BgReading bgReading = BgReading.last();
+                if (JoH.pratelimit("gcm-bfr", 299)) {
+                    GcmActivity.sendMessage("bfr", bgReading != null ? "" + bgReading.timestamp : "");
+                }
                 bg_sync_backoff++;
             } else {
                 Log.d(TAG, "Already requested BGsync recently, backoff: " + bg_sync_backoff);
@@ -538,7 +542,7 @@ public class GcmActivity extends FauxActivity {
         }
     }
 
-    static void syncBGTable2() {
+    static synchronized void syncBGTable2() {
         if (!Sensor.isActive()) return;
         new Thread() {
             @Override

@@ -24,6 +24,7 @@ import com.eveningoutpost.dexdrip.utilitymodels.CollectionServiceStarter;
 import com.eveningoutpost.dexdrip.utilitymodels.Constants;
 import com.eveningoutpost.dexdrip.utilitymodels.Notifications;
 import com.eveningoutpost.dexdrip.utilitymodels.Pref;
+import com.eveningoutpost.dexdrip.calibrations.CalibrationAbstract;
 import com.eveningoutpost.dexdrip.calibrations.NativeCalibrationPipe;
 import com.eveningoutpost.dexdrip.calibrations.PluggableCalibration;
 import com.eveningoutpost.dexdrip.utils.DexCollectionType;
@@ -750,6 +751,19 @@ public class Calibration extends Model {
                     Home.toaststaticnext("Got invalid zero slope calibration!");
                     calibration.save(); // Save nulled record, lastValid should protect from bad calibrations
                     newFingerStickData();
+                } else if (calibration.intercept > CalibrationAbstract.getHighestSaneIntercept()) {
+                 /*
+                    calibration.sensor_confidence = 0;
+                    calibration.slope_confidence = 0;
+                    final String msg = "Got invalid non-sane intercept calibration! ";
+                    Home.toaststaticnext(msg);
+                    UserError.Log.wtf(TAG, msg + calibration.toS());
+                */
+                    // Just log the error but store the calibration so we can use it in a plugin situation. lastValid() will filter it from calculations.
+                    UserError.Log.e(TAG, "Got invalid intercept value in xDrip classic algorithm: " + calibration.intercept);
+                    calibration.save(); // save record, lastValid should protect from bad calibrations
+                    newFingerStickData();
+
                 } else {
                     calibration.save();
                     newFingerStickData();
@@ -1088,6 +1102,7 @@ public class Calibration extends Model {
                 .where("slope_confidence != 0")
                 .where("sensor_confidence != 0")
                 .where("slope != 0")
+                .where("intercept <= ?", CalibrationAbstract.getHighestSaneIntercept())
                 .orderBy("timestamp desc")
                 .executeSingle();
     }
@@ -1150,6 +1165,8 @@ public class Calibration extends Model {
                 .execute();
     }
 
+    // TODO calls to this method are used for UI features as to whether calibration is needed
+    // TODO this might need to updated to ignore invalid intercepts depending on plugin configuration etc
     public static List<Calibration> latestValid(int number) {
         return latestValid(number, JoH.tsl() + Constants.HOUR_IN_MS);
     }
@@ -1159,6 +1176,7 @@ public class Calibration extends Model {
         if (sensor == null) {
             return null;
         }
+        // we don't filter invalid intercepts here as they will be filtered in the plugin itself
         return new Select()
                 .from(Calibration.class)
                 .where("Sensor = ? ", sensor.getId())

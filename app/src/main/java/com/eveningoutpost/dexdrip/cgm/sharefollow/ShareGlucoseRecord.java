@@ -2,7 +2,7 @@ package com.eveningoutpost.dexdrip.cgm.sharefollow;
 
 import com.eveningoutpost.dexdrip.models.BgReading;
 import com.eveningoutpost.dexdrip.models.JoH;
-import com.eveningoutpost.dexdrip.UtilityModels.Unitized;
+import com.eveningoutpost.dexdrip.utilitymodels.Unitized;
 import com.google.gson.annotations.Expose;
 
 /**

@@ -62,7 +62,7 @@ import com.eveningoutpost.dexdrip.models.TransmitterData;
 import com.eveningoutpost.dexdrip.models.UserError;
 import com.eveningoutpost.dexdrip.models.UserError.Log;
 import com.eveningoutpost.dexdrip.utilitymodels.CollectionServiceStarter;
-//KS import com.eveningoutpost.dexdrip.UtilityModels.ForegroundServiceStarter;
+//KS import com.eveningoutpost.dexdrip.utilitymodels.ForegroundServiceStarter;
 import com.eveningoutpost.dexdrip.utilitymodels.PersistentStore;
 import com.eveningoutpost.dexdrip.utilitymodels.Pref;
 import com.eveningoutpost.dexdrip.utilitymodels.StatusItem;

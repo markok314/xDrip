@@ -36,7 +36,7 @@ import com.eveningoutpost.dexdrip.models.Calibration;
 import com.eveningoutpost.dexdrip.models.Sensor;
 import com.eveningoutpost.dexdrip.utilitymodels.CollectionServiceStarter;
 import com.eveningoutpost.dexdrip.utilitymodels.DexShareAttributes;
-//KS import com.eveningoutpost.dexdrip.UtilityModels.ForegroundServiceStarter;
+//KS import com.eveningoutpost.dexdrip.utilitymodels.ForegroundServiceStarter;
 import com.eveningoutpost.dexdrip.utilitymodels.HM10Attributes;
 import com.eveningoutpost.dexdrip.utilitymodels.PersistentStore;
 //KS import com.eveningoutpost.dexdrip.utils.BgToSpeech;

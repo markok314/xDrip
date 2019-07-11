@@ -2,7 +2,7 @@ package com.eveningoutpost.dexdrip.cgm.nsfollow.utils;
 
 import com.eveningoutpost.dexdrip.models.JoH;
 import com.eveningoutpost.dexdrip.RobolectricTestWithConfig;
-import com.eveningoutpost.dexdrip.UtilityModels.Constants;
+import com.eveningoutpost.dexdrip.utilitymodels.Constants;
 
 import org.junit.Before;
 import org.junit.Test;

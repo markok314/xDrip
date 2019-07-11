@@ -2,7 +2,7 @@ package com.eveningoutpost.dexdrip.cgm.sharefollow;
 
 import com.eveningoutpost.dexdrip.models.JoH;
 import com.eveningoutpost.dexdrip.models.UserError;
-import com.eveningoutpost.dexdrip.UtilityModels.PersistentStore;
+import com.eveningoutpost.dexdrip.utilitymodels.PersistentStore;
 
 import java.io.IOException;
 import java.util.List;

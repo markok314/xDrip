@@ -49,8 +49,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-//KS import static com.eveningoutpost.dexdrip.UtilityModels.ColorCache.X;
-//KS import static com.eveningoutpost.dexdrip.UtilityModels.ColorCache.getCol;
+//KS import static com.eveningoutpost.dexdrip.utilitymodels.ColorCache.X;
+//KS import static com.eveningoutpost.dexdrip.utilitymodels.ColorCache.getCol;
 
 /**
  * Created by Emma Black on 11/28/14.

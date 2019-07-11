@@ -14,7 +14,7 @@ import com.activeandroid.util.SQLiteUtils;
 import com.eveningoutpost.dexdrip.Home;
 //KS import com.eveningoutpost.dexdrip.Services.SyncService;
 import com.eveningoutpost.dexdrip.utilitymodels.Constants;
-//KS import com.eveningoutpost.dexdrip.UtilityModels.UploaderQueue;
+//KS import com.eveningoutpost.dexdrip.utilitymodels.UploaderQueue;
 //KS import com.eveningoutpost.dexdrip.calibrations.CalibrationAbstract;
 //KS import com.eveningoutpost.dexdrip.calibrations.PluggableCalibration;
 //KS import com.eveningoutpost.dexdrip.messages.BloodTestMessage;

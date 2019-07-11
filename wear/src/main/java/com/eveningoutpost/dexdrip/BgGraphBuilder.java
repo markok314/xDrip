@@ -633,7 +633,7 @@ public class BgGraphBuilder {
             JoH.static_toast(xdrip.getAppContext(), message, Toast.LENGTH_SHORT);
 
             /*switch (type) {
-                case com.eveningoutpost.dexdrip.UtilityModels.PointValueExtended.BloodTest:
+                case com.eveningoutpost.dexdrip.utilitymodels.PointValueExtended.BloodTest:
                     final String fuuid = uuid;
                     final View.OnClickListener mBtOnClickListener = new View.OnClickListener() {
                         @Override

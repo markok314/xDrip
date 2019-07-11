@@ -34,7 +34,7 @@ import static com.eveningoutpost.dexdrip.utilitymodels.AlertPlayer.getAlertPlaye
 
 //KS import com.eveningoutpost.dexdrip.EditAlertActivity;
 //KS import com.eveningoutpost.dexdrip.GcmActivity;
-//KS import com.eveningoutpost.dexdrip.UtilityModels.pebble.PebbleWatchSync;
+//KS import com.eveningoutpost.dexdrip.utilitymodels.pebble.PebbleWatchSync;
 
 // A helper class to create the mediaplayer on the UI thread.
 // This is needed in order for the callbackst to work.
